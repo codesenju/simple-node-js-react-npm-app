@@ -1,13 +1,13 @@
 pipeline {
     agent {
         docker {
-            image 'codesenju/staging' 
+            image 'docker:dind' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'apk add git' 
             }
         }
     }
